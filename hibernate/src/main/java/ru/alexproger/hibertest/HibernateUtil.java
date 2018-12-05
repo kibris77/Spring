@@ -5,6 +5,9 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+/**
+ * Класс с настройкой Hibrnate для получения подключений к базе данных.
+ */
 public class HibernateUtil {
     private static SessionFactory sessionFactory;
 
@@ -19,5 +22,9 @@ public class HibernateUtil {
 
     public static SessionFactory getSessionFactory() {
         return sessionFactory;
+    }
+
+    public static void close() {
+        sessionFactory.close();
     }
 }
