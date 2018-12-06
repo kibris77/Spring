@@ -25,7 +25,21 @@ public class AuthorHelper {
         cq.select(root);
         Query query = session.createQuery(cq);
         List<Author> result = query.getResultList();
-
         return result;
+    }
+
+    public Author addAuthor(Author author) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        for (int i = 0; i < 200; i++) {
+            if (i % 20 == 0) {
+                session.flush();
+            }
+            Author newAuthor = new Author("name" + i);
+            session.save(newAuthor);
+        }
+        session.getTransaction().commit();
+        session.close();
+        return author;
     }
 }
