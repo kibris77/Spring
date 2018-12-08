@@ -23,4 +23,9 @@ public class Author implements Serializable {
     private String name;
     @Column(name = "second_name")
     private String secondName;
+
+    public Author(Long id, String name) {
+        this.secondName = name;
+        this.id = id;
+    }
 }

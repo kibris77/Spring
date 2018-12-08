@@ -15,9 +15,11 @@
 
     <property name="show_sql">true</property>
     <property name="hibernate.format_sql">true</property>
-    <mapping class="ru.alexproger.hibertest.entity.Author"/>
-    <mapping class="ru.alexproger.hibertest.entity.Book"/>
+    <!--<property name="hbm2ddl.auto">update</property>-->
+    <mapping class="ru.alexproger.student.entity.Student"/>
+    <mapping class="ru.alexproger.student.entity.Adress"/>
+    <mapping class="ru.alexproger.student.entity.Course"/>
     <!-- DB schema will be updated if needed -->
-    <!-- <property name="hbm2ddl.auto">update</property> -->
+
   </session-factory>
 </hibernate-configuration>

@@ -4,6 +4,8 @@ import org.jboss.logging.Logger;
 import ru.alexproger.hibertest.entity.Author;
 import ru.alexproger.hibertest.entity.Book;
 
+import java.util.List;
+
 public class Main {
     private static final Logger LOG = Logger.getLogger(AuthorHelper.class.getName());
 
@@ -11,7 +13,7 @@ public class Main {
         AuthorHelper authorHelper = new AuthorHelper();
         BookHelper bookHelper = new BookHelper();
 
-        Author newAuthor = new Author("Земцов");
+       /* Author newAuthor = new Author("Земцов");
         authorHelper.addAuthor(newAuthor);
 
         for (Author author: authorHelper.getAuthorList()) {
@@ -19,7 +21,10 @@ public class Main {
         }
         for (Book book: bookHelper.getBookList()) {
             LOG.warn(book.getName());
-        }
+        }*/
+        List<Author> list = authorHelper.getAuthorList();
+        System.out.println(list);
+
         HibernateUtil.close();
     }
 }

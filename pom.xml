@@ -11,6 +11,7 @@
 
     <modules>
         <module>hibernate</module>
+        <module>studentsdata</module>
     </modules>
 
     <properties>
@@ -71,6 +72,12 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>5.3.7.Final</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
