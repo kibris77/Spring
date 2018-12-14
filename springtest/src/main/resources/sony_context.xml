@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="sonyHead" class="ru.alexproger.spring.impls.sony.SonyHead" scope="prototype"/>
+    <bean id="sonyHand" class="ru.alexproger.spring.impls.sony.SonyHand" scope="prototype"/>
+    <bean id="sonyLeg" class="ru.alexproger.spring.impls.sony.SonyLeg" scope="prototype"/>
+</beans>

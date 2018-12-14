@@ -12,6 +12,7 @@
     <modules>
         <module>hibernate</module>
         <module>studentsdata</module>
+        <module>springtest</module>
     </modules>
 
     <properties>
