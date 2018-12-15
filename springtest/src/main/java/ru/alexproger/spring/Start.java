@@ -7,7 +7,7 @@ import ru.alexproger.spring.interfaces.Robot;
 public class Start {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("context.xml");
-        Robot robot = (Robot)context.getBean("t1000");
+        Robot robot = (Robot)context.getBean("modelT1000");
         robot.action();
     }
 }

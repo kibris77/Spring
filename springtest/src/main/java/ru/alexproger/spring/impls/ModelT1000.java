@@ -10,11 +10,6 @@ import ru.alexproger.spring.interfaces.Robot;
 @Component
 public class ModelT1000 extends BaseModel implements Robot {
 
-
-    public ModelT1000(Leg leg, Head head, Hand hand) {
-        super(leg, head, hand);
-    }
-
     @Override
     public void dance() {
         System.out.println("Dancing");
