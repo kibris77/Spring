@@ -7,7 +7,7 @@ import ru.alexproger.spring.interfaces.Head;
 import ru.alexproger.spring.interfaces.Leg;
 import ru.alexproger.spring.interfaces.Robot;
 
-@Component
+
 public class ModelT1000 extends BaseModel implements Robot {
 
     @Override
