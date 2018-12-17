@@ -11,6 +11,7 @@ public class Start {
         ApplicationContext context = new ClassPathXmlApplicationContext("filecontext.xml");
         FileManger service = (FileManger) context.getBean("fileManger");
         service.getExtensionCount("/home/alexander/");
+        service.getExtensionList("/home/alexander/");
 
         ((ConfigurableApplicationContext)context).close();
     }

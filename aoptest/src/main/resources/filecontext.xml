@@ -5,11 +5,5 @@
        xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <context:component-scan base-package="ru.alexproger.aopfirsttest"/>
-    <aop:config>
-        <aop:aspect id="log" ref="myTimeLogger">
-            <aop:pointcut expression="execution(public * *(..))" id="allMethods"/>
-            <aop:around pointcut-ref="allMethods" method="watchTime"/>
-            <aop:after-returning pointcut-ref="allMethods" returning="obj" method="print"/>
-        </aop:aspect>
-    </aop:config>
+    <aop:aspectj-autoproxy/>
 </beans>
