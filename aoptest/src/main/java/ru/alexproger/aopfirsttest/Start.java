@@ -4,6 +4,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import ru.alexproger.aopfirsttest.objects.FileManger;
+import ru.alexproger.aopfirsttest.objects.Manager;
 import ru.alexproger.aopfirsttest.service.SomeService;
 
 public class Start {

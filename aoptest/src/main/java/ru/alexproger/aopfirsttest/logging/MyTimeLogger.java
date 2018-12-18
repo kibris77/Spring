@@ -14,12 +14,12 @@ import java.util.Set;
 @Aspect
 public class MyTimeLogger {
 
-    @Pointcut("execution(* *(..)) && within(ru.alexproger.aopfirsttest.objects.*)")
+    @Pointcut("execution(* ru.alexproger.aopfirsttest.objects.Manager.*(..))")
     private void allMethods() {
 
     }
 
-    @Around("allMethods() && @annotation(ru.alexproger.aopfirsttest.annotations.ShowTime)")
+    @Around("allMethods() && execution(java.util.Map *(..)))")
     public Object watchTime(ProceedingJoinPoint joinpoint) {
         long start = System.currentTimeMillis();
         System.out.println("method begin: " + joinpoint.getSignature().toShortString());
@@ -36,19 +36,23 @@ public class MyTimeLogger {
         return output;
     }
 
-    @AfterReturning(pointcut = "allMethods() && @annotation(ru.alexproger.aopfirsttest.annotations.ShowResult)", returning = "obj")
+    @AfterReturning(pointcut = "allMethods() && execution(java.util.Map *(..))))", returning = "obj")
     public void print(Object obj) {
         System.out.println("Print info begin >>");
-        if (obj instanceof Set) {
-            Set set = (Set) obj;
-            for (Object object : set) {
-                System.out.println(object);
-            }
-        } else if (obj instanceof Map) {
-            Map map = (Map) obj;
-            for (Object object : map.keySet()) {
-                System.out.println("key=" + object + ", " + map.get(object));
-            }
+        Map map = (Map) obj;
+        for (Object object : map.keySet()) {
+            System.out.println("key=" + object + ", " + map.get(object));
+
+        }
+        System.out.println("Print info end <<");
+        System.out.println();
+    }
+    @AfterReturning(pointcut = "allMethods() && execution(java.util.Set *(..))))", returning = "obj")
+    public void printSet(Object obj) {
+        System.out.println("Print info begin >>");
+        Set set = (Set) obj;
+        for (Object object : set) {
+            System.out.println(object);
         }
         System.out.println("Print info end <<");
         System.out.println();

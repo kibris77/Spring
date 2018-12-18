@@ -12,9 +12,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 @Component
-public class FileManger {
+public class FileManger implements Manager{
     @ShowTime
     @ShowResult
+    @Override
     public Set<String> getExtensionList(String folder) {
         File dir = new File(folder);
 
@@ -36,6 +37,7 @@ public class FileManger {
 
     @ShowTime
     @ShowResult
+    @Override
     public Map<String, Integer> getExtensionCount(String folder) {
 
         File dir = new File(folder);
